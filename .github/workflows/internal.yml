@@ -121,63 +121,27 @@ jobs:
         with:
           submodules: 'recursive'
       - uses: actions/download-artifact@v3
-        id: download-gh_gms
-        with:
-          name: artifacts-gh_gms
-          path: download/gh_gms
-      - uses: actions/download-artifact@v3
         id: download-gh_nogms
         with:
           name: artifacts-gh_nogms
           path: download/gh_nogms
-      - uses: actions/download-artifact@v3
-        id: download-googleplay
-        with:
-          name: artifacts-googleplay
-          path: download/googleplay
-      - uses: actions/download-artifact@v3
-        id: download-wearos
-        with:
-          name: artifacts-wearos
-          path: download/wearos
       - name: 'Set variables'
         id: vars
         run: |
           export $(cat .github/workflows/version.env | xargs)
           echo "major_version=${MAJOR_VERSION}" >> $GITHUB_OUTPUT
           echo "minor_version=${{ needs.build_number.outputs.number }}" >> $GITHUB_OUTPUT
-          echo "minor_version_wearos=${{ needs.build_number.outputs.number_wearos }}" >> $GITHUB_OUTPUT
       - name: 'Copy artifacts'
         id: artifacts_copy
         run: |
           mkdir artifacts
-          cp ${{steps.download-gh_gms.outputs.download-path}}/* artifacts/
           cp ${{steps.download-gh_nogms.outputs.download-path}}/* artifacts/
-          cp ${{steps.download-googleplay.outputs.download-path}}/* artifacts/
-          cp ${{steps.download-wearos.outputs.download-path}}/* artifacts/
           echo "path=artifacts/" >> $GITHUB_OUTPUT
       - name: Install zip
         uses: montudor/action-zip@v1
-      - name: Prepare mapping
-        id: mappings
-        run: |
-          mkdir mappings
-          for target in "gh_gms" "gh_nogms" "googleplay" "wearos"; do \
-          mv "${{ steps.artifacts_copy.outputs.path }}/mapping-${target}.txt" mappings/ ; done
-          zip -qq -r mappings.zip mappings
-          echo "archive=mappings.zip" >> $GITHUB_OUTPUT
-      - name: Prepare other builds
-        id: other
-        run: |
-          mkdir other
-          mv "${{ steps.artifacts_copy.outputs.path }}/flipper-zero-googleplay.apk" other/
-          mv ${{ steps.artifacts_copy.outputs.path }}/*.aab other/
-          zip -qq -r other.zip other
-          echo "archive=other.zip" >> $GITHUB_OUTPUT
       - name: Artefact build beautifier
         id: beautifier
         run: |
-          mv ${{ steps.artifacts_copy.outputs.path }}/flipper-zero-gh_gms.apk ${{ steps.artifacts_copy.outputs.path }}/flipper-zero-gms-${{ steps.vars.outputs.major_version }}.${{ steps.vars.outputs.minor_version }}.apk  
           mv ${{ steps.artifacts_copy.outputs.path }}/flipper-zero-gh_nogms.apk ${{ steps.artifacts_copy.outputs.path }}/flipper-zero-nogms-${{ steps.vars.outputs.major_version }}.${{ steps.vars.outputs.minor_version }}.apk
       - name: Create internal Release
         id: create_internal_release
@@ -186,9 +150,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           files: |
-            ${{ steps.mappings.outputs.archive }}
-            ${{ steps.other.outputs.archive }}
-            ${{ steps.artifacts_copy.outputs.path }}/flipper-zero-gms-${{ steps.vars.outputs.major_version }}.${{ steps.vars.outputs.minor_version }}.apk
             ${{ steps.artifacts_copy.outputs.path }}/flipper-zero-nogms-${{ steps.vars.outputs.major_version }}.${{ steps.vars.outputs.minor_version }}.apk
           tag_name: ${{ steps.vars.outputs.major_version }}.${{ steps.vars.outputs.minor_version }}
           name: Flipper App ${{ steps.vars.outputs.major_version }}.${{ steps.vars.outputs.minor_version }}
