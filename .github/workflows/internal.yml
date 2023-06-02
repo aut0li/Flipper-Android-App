@@ -57,7 +57,7 @@ jobs:
     needs: build_number
     strategy:
       matrix:
-        target: [ "gh_gms", "gh_nogms", "googleplay" ]
+        target: [ "gh_nogms"]
     steps:
       - uses: actions/checkout@v3
         with:
@@ -112,130 +112,36 @@ jobs:
         with:
           name: artifacts-${{ matrix.target }}
           path: ${{ steps.artifacts_copy.outputs.path }}
-  build_internal_release_gms_wearos:
-    name: Build Internal AAB and APK WearOS
-    runs-on: ubuntu-latest
-    needs: build_number
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          submodules: 'recursive'
-      - name: Set up JDK 1.17
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: '17'
-      - name: 'Set variables'
-        id: vars
-        run: |
-          export $(cat .github/workflows/version.env | xargs)
-          echo "major_version=${MAJOR_VERSION}" >> $GITHUB_OUTPUT
-          echo "minor_version=${{ needs.build_number.outputs.number_wearos }}" >> $GITHUB_OUTPUT
-      - name: Build internal release
-        env:
-          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
-          ORG_GRADLE_PROJECT_version_code: ${{ steps.vars.outputs.minor_version }}
-          ORG_GRADLE_PROJECT_version_name: "${{ steps.vars.outputs.major_version }}.${{ steps.vars.outputs.minor_version }}"
-        run: |
-          export $(cat .github/workflows/targets/wearos.env | xargs)
-          ./gradlew :instances:wearable:assembleInternal :instances:wearable:bundleInternal
-      - name: Sign Wear AAB
-        id: sign_wear_aab
-        uses: r0adkll/sign-android-release@v1
-        with:
-          releaseDirectory: instances/wearable/build/outputs/bundle/internal
-          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
-          alias: ${{ secrets.KEY_ALIAS }}
-          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
-          keyPassword: ${{ secrets.KEY_ALIAS_PASSWORD }}
-      - name: Sign Wear APK
-        id: sign_wear_apk
-        uses: r0adkll/sign-android-release@v1
-        with:
-          releaseDirectory: instances/wearable/build/outputs/apk/internal
-          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
-          alias: ${{ secrets.KEY_ALIAS }}
-          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
-          keyPassword: ${{ secrets.KEY_ALIAS_PASSWORD }}
-      - name: Copy artifacts
-        id: artifacts_copy
-        run: |
-          mkdir artifacts
-          cp ${{ steps.sign_wear_aab.outputs.signedReleaseFile }} artifacts/flipper-zero-wearos.aab
-          cp ${{ steps.sign_wear_apk.outputs.signedReleaseFile }} artifacts/flipper-zero-wearos.apk
-          cp instances/wearable/build/outputs/mapping/internal/mapping.txt artifacts/mapping-wearos.txt
-          echo "path=artifacts/" >> $GITHUB_OUTPUT
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: artifacts-wearos
-          path: ${{ steps.artifacts_copy.outputs.path }}
   upload_to_github:
     name: Upload to Github Releases
     runs-on: ubuntu-latest
-    needs: [ build_internal_release, build_internal_release_gms_wearos, build_number ]
+    needs: [ build_internal_release , build_number ]
     steps:
       - uses: actions/checkout@v3
         with:
           submodules: 'recursive'
-      - uses: actions/download-artifact@v3
-        id: download-gh_gms
-        with:
-          name: artifacts-gh_gms
-          path: download/gh_gms
       - uses: actions/download-artifact@v3
         id: download-gh_nogms
         with:
           name: artifacts-gh_nogms
           path: download/gh_nogms
-      - uses: actions/download-artifact@v3
-        id: download-googleplay
-        with:
-          name: artifacts-googleplay
-          path: download/googleplay
-      - uses: actions/download-artifact@v3
-        id: download-wearos
-        with:
-          name: artifacts-wearos
-          path: download/wearos
       - name: 'Set variables'
         id: vars
         run: |
           export $(cat .github/workflows/version.env | xargs)
           echo "major_version=${MAJOR_VERSION}" >> $GITHUB_OUTPUT
           echo "minor_version=${{ needs.build_number.outputs.number }}" >> $GITHUB_OUTPUT
-          echo "minor_version_wearos=${{ needs.build_number.outputs.number_wearos }}" >> $GITHUB_OUTPUT
       - name: 'Copy artifacts'
         id: artifacts_copy
         run: |
           mkdir artifacts
-          cp ${{steps.download-gh_gms.outputs.download-path}}/* artifacts/
           cp ${{steps.download-gh_nogms.outputs.download-path}}/* artifacts/
-          cp ${{steps.download-googleplay.outputs.download-path}}/* artifacts/
-          cp ${{steps.download-wearos.outputs.download-path}}/* artifacts/
           echo "path=artifacts/" >> $GITHUB_OUTPUT
       - name: Install zip
         uses: montudor/action-zip@v1
-      - name: Prepare mapping
-        id: mappings
-        run: |
-          mkdir mappings
-          for target in "gh_gms" "gh_nogms" "googleplay" "wearos"; do \
-          mv "${{ steps.artifacts_copy.outputs.path }}/mapping-${target}.txt" mappings/ ; done
-          zip -qq -r mappings.zip mappings
-          echo "archive=mappings.zip" >> $GITHUB_OUTPUT
-      - name: Prepare other builds
-        id: other
-        run: |
-          mkdir other
-          mv "${{ steps.artifacts_copy.outputs.path }}/flipper-zero-googleplay.apk" other/
-          mv ${{ steps.artifacts_copy.outputs.path }}/*.aab other/
-          zip -qq -r other.zip other
-          echo "archive=other.zip" >> $GITHUB_OUTPUT
       - name: Artefact build beautifier
         id: beautifier
         run: |
-          mv ${{ steps.artifacts_copy.outputs.path }}/flipper-zero-gh_gms.apk ${{ steps.artifacts_copy.outputs.path }}/flipper-zero-gms-${{ steps.vars.outputs.major_version }}.${{ steps.vars.outputs.minor_version }}.apk  
           mv ${{ steps.artifacts_copy.outputs.path }}/flipper-zero-gh_nogms.apk ${{ steps.artifacts_copy.outputs.path }}/flipper-zero-nogms-${{ steps.vars.outputs.major_version }}.${{ steps.vars.outputs.minor_version }}.apk
       - name: Create internal Release
         id: create_internal_release
@@ -244,39 +150,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           files: |
-            ${{ steps.mappings.outputs.archive }}
-            ${{ steps.other.outputs.archive }}
-            ${{ steps.artifacts_copy.outputs.path }}/flipper-zero-gms-${{ steps.vars.outputs.major_version }}.${{ steps.vars.outputs.minor_version }}.apk
             ${{ steps.artifacts_copy.outputs.path }}/flipper-zero-nogms-${{ steps.vars.outputs.major_version }}.${{ steps.vars.outputs.minor_version }}.apk
           tag_name: ${{ steps.vars.outputs.major_version }}.${{ steps.vars.outputs.minor_version }}
           name: Flipper App ${{ steps.vars.outputs.major_version }}.${{ steps.vars.outputs.minor_version }}
           draft: false
           prerelease: true
-  upload_to_playstore:
-    name: Upload to Play Store
-    runs-on: ubuntu-latest
-    needs: [ build_internal_release, build_internal_release_gms_wearos ]
-    steps:
-      - uses: actions/download-artifact@v3
-        id: download-googleplay
-        with:
-          name: artifacts-googleplay
-      - uses: actions/download-artifact@v3
-        id: download-wearos
-        with:
-          name: artifacts-wearos
-      - name: Copy artifacts
-        id: artifacts_copy
-        run: |
-          mkdir artifacts
-          cp ${{steps.download-googleplay.outputs.download-path}}/flipper-zero-googleplay.aab artifacts
-          cp ${{steps.download-wearos.outputs.download-path}}/flipper-zero-wearos.aab artifacts
-          echo "path=artifacts" >> $GITHUB_OUTPUT
-      - name: Upload to Play Store
-        uses: r0adkll/upload-google-play@v1
-        with:
-          serviceAccountJsonPlainText: ${{ secrets.GOOGLE_PLAY_PUBLISHER_JSON }}
-          packageName: com.flipperdevices.app
-          releaseFiles: "${{ steps.artifacts_copy.outputs.path }}/*.aab"
-          track: beta
-          mappingFile: ${{steps.download-googleplay.outputs.download-path}}/mapping-googleplay.txt
