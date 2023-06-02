@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="options">Options</string>
+    <string name="options">选项</string>
 
-    <string name="theme_options">Color Theme</string>
-    <string name="theme_options_desc">System/Light/Dark</string>
-    <string name="theme_options_system">System</string>
-    <string name="theme_options_light">Light</string>
-    <string name="theme_options_dark">Dark</string>
+    <string name="theme_options">主题</string>
+    <string name="theme_options_desc">跟随系统/明亮/黑暗</string>
+    <string name="theme_options_system">跟随系统</string>
+    <string name="theme_options_light">明亮</string>
+    <string name="theme_options_dark">黑暗</string>
     <string name="theme_options_unknown">Unknown</string>
 
-    <string name="debug_options">Debug Options</string>
+    <string name="debug_options">Debug模式</string>
     <string name="debug_options_desc">Features for developers and testing</string>
     <string name="debug_stress_test">Stress Test</string>
     <string name="debug_stress_test_desc">App performance testing</string>
@@ -26,27 +26,27 @@
 
     <string name="debug_ignored_unsupported_version_toast">Please restart the application to apply</string>
 
-    <string name="experimental_options">Experimental Options</string>
-    <string name="experimental_options_desc">Unstable and untested features</string>
-    <string name="experimental_file_manager">File Manager</string>
-    <string name="experimental_file_manager_desc">Navigate through Flipper files</string>
-    <string name="experimental_screen_streaming">Screen Streaming</string>
-    <string name="experimental_screen_streaming_desc">Control Flipper via phone</string>
-    <string name="experimental_application_catalog">Enable Apps in Hub</string>
-    <string name="experimental_application_switch">New switch in Apps</string>
+    <string name="experimental_options">实验性选项</string>
+    <string name="experimental_options_desc">不稳定和未测试功能</string>
+    <string name="experimental_file_manager">文件管理器</string>
+    <string name="experimental_file_manager_desc">在Flipper文件中导航</string>
+    <string name="experimental_screen_streaming">屏幕串流</string>
+    <string name="experimental_screen_streaming_desc">手机控制flipper</string>
+    <string name="experimental_application_catalog">在Hub中启用APP</string>
+    <string name="experimental_application_switch">APP中的新开关</string>
 
     <string name="other_github_open">GitHub</string>
     <string name="other_github_url">https://github.com/flipperdevices/Flipper-Android-App</string>
-    <string name="other_forum_open">Forum</string>
+    <string name="other_forum_open">论坛</string>
     <string name="other_forum_url">https://forum.flipperzero.one/</string>
-    <string name="other_shake2report_open">Report Bug</string>
-    <string name="export_keys">Backup keys</string>
-    <string name="export_keys_picker_title">Save the zip with the keys…</string>
-    <string name="version_name_app">Flipper Mobile App</string>
-    <string name="version">Version</string>
+    <string name="other_shake2report_open">反馈BUG</string>
+    <string name="export_keys">备份Key</string>
+    <string name="export_keys_picker_title">储存包含key的zip中...</string>
+    <string name="version_name_app">Flipper 移动App</string>
+    <string name="version">版本</string>
 
-    <string name="options_remote_control_title">Remote Control</string>
-    <string name="options_remote_control_subtitle">New Remote Control</string>
-    <string name="options_remote_control_desc">We’ve improved this feature and moved it to the Hub tab</string>
+    <string name="options_remote_control_title">远程控制</string>
+    <string name="options_remote_control_subtitle">新版本的远程控制</string>
+    <string name="options_remote_control_desc">我们改进了这个功能，并把它移到了"HUB"标签上。</string>
 
 </resources>

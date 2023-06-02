@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="archive_content_empty">You have no keys yet</string>
-    <string name="archive_tab_general_favorite_title">Favorites</string>
-    <string name="archive_tab_general_all_title">All</string>
-    <string name="archive_tab_deleted">Deleted</string>
-    <string name="archive_title">Archive</string>
-    <string name="archive_sync_progress">Syncing with Flipper…</string>
-    <string name="archive_sync_percent">Syncing %1$s</string>
-    <string name="archive_sync_cancel">Cancel</string>
+    <string name="archive_content_empty">你没有内容在这里</string>
+    <string name="archive_tab_general_favorite_title">收藏</string>
+    <string name="archive_tab_general_all_title">全部</string>
+    <string name="archive_tab_deleted">已删除</string>
+    <string name="archive_title">储存库</string>
+    <string name="archive_sync_progress">向Flipper同步中…</string>
+    <string name="archive_sync_percent">同步中 %1$s...</string>
+    <string name="archive_sync_cancel">取消</string>
 </resources>
