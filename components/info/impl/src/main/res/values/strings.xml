@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="info_debug">Debug</string>
-    <string name="info_file_manager">File Manager</string>
-    <string name="info_screen_streaming">Screen Streaming</string>
-    <string name="info_connection_to_another_device">Connection to another device</string>
+    <string name="info_file_manager">文件管理</string>
+    <string name="info_screen_streaming">屏幕串流</string>
+    <string name="info_connection_to_another_device">连接其他设备</string>
 
-    <string name="info_device_no_device">No device</string>
-    <string name="info_device_not_connected">Not connected</string>
-    <string name="info_device_connected">Connected</string>
+    <string name="info_device_no_device">没有设备</string>
+    <string name="info_device_not_connected">未连接</string>
+    <string name="info_device_connected">已连接</string>
     <string name="info_device_model_name">Flipper Zero</string>
 
-    <string name="info_firmware_update_title">Firmware Update</string>
-    <string name="info_firmware_update_unsupported_title">Outdated firmware version</string>
+    <string name="info_firmware_update_title">固件升级</string>
+    <string name="info_firmware_update_unsupported_title">过时的固件版本</string>
     <string name="info_firmware_update_unsupported_desc">Firmware version on your Flipper is not supported. Please update it via PC.</string>
     <string name="info_firmware_update_unsupported_link">[How to update Flipper](https://docs.flipperzero.one/basics/firmware-update)</string>
     <string name="info_firmware_update_application_unsupported_title">Outdated Mobile App version</string>
@@ -19,38 +19,38 @@
     <string name="info_firmware_update_application_unsupported_link">[Go to Google Play](https://play.google.com/store/apps/details?id=com.flipperdevices.app)</string>
     <string name="info_firmware_waiting">Waiting for Flipper to finish update.\nReconnecting</string>
 
-    <string name="info_device_options">Options</string>
+    <string name="info_device_options">选项</string>
 
-    <string name="info_device_connect">Connect</string>
-    <string name="info_device_disconnect">Disconnect</string>
-    <string name="info_device_synchronize">Synchronize</string>
-    <string name="info_device_play_alert">Play Alert on Flipper</string>
-    <string name="info_device_forget">Forget Flipper</string>
-    <string name="info_device_forget_dialog_title">Forget Flipper?</string>
-    <string name="info_device_forget_dialog_description">App will no longer be paired with Flipper %1$s</string>
-    <string name="info_device_forget_dialog_forget">Forget</string>
-    <string name="info_device_forget_dialog_cancel">Cancel</string>
+    <string name="info_device_connect">连接</string>
+    <string name="info_device_disconnect">关闭连接</string>
+    <string name="info_device_synchronize">同步</string>
+    <string name="info_device_play_alert">在Flipper上播放警报</string>
+    <string name="info_device_forget">忘记此Flipper连接</string>
+    <string name="info_device_forget_dialog_title">确认忘记吗?</string>
+    <string name="info_device_forget_dialog_description">应用程序将不再与设备 %1$s 配对</string>
+    <string name="info_device_forget_dialog_forget">忘记</string>
+    <string name="info_device_forget_dialog_cancel">取消</string>
 
-    <string name="info_device_info_title">Device Info</string>
-    <string name="info_device_info_version">Firmware Version</string>
-    <string name="info_device_info_build_date">Build Date</string>
-    <string name="info_device_info_int_flash">Int. Flash (Used/Total)</string>
-    <string name="info_device_info_ext_flash">SD Card (Used/Total)</string>
-    <string name="info_device_info_more_information">Full Info</string>
+    <string name="info_device_info_title">设备信息</string>
+    <string name="info_device_info_version">固件版本</string>
+    <string name="info_device_info_build_date">构建时间</string>
+    <string name="info_device_info_int_flash">内置存储 (已使用/总共)</string>
+    <string name="info_device_info_ext_flash">SD 卡 (已使用/总共)</string>
+    <string name="info_device_info_more_information">全部信息</string>
 
-    <string name="full_info_flipper_device">Flipper Device</string>
-    <string name="full_info_firmware">Firmware</string>
-    <string name="full_info_radio_stack">Radio Stack</string>
-    <string name="full_info_other">Other</string>
+    <string name="full_info_flipper_device">Flipper 设备</string>
+    <string name="full_info_firmware">固件版本</string>
+    <string name="full_info_radio_stack">射频版本</string>
+    <string name="full_info_other">其他</string>
 
-    <string name="full_info_device_name">Device Name</string>
-    <string name="full_info_hardware_model">Hardware Model</string>
-    <string name="full_info_hardware_region">Hardware Region</string>
-    <string name="full_info_hardware_region_provisioned">Hardware Region Provisioned</string>
+    <string name="full_info_device_name">设备名称</string>
+    <string name="full_info_hardware_model">硬件型号</string>
+    <string name="full_info_hardware_region">硬件区域</string>
+    <string name="full_info_hardware_region_provisioned">已提供的硬件区域</string>
     <string name="full_info_hardware_region_provisioned_ru">Russia Will Be Free</string>
-    <string name="full_info_hardware_version">Hardware Version</string>
-    <string name="full_info_hardware_otp_version">Hardware OTP Version</string>
-    <string name="full_info_serial_number">Serial Number</string>
+    <string name="full_info_hardware_version">硬件版本</string>
+    <string name="full_info_hardware_otp_version">硬件OTP版本</string>
+    <string name="full_info_serial_number">设备序列号</string>
 
     <string name="full_info_software_revision">Software Revision</string>
     <string name="full_info_build_date">Build Date</string>
@@ -65,6 +65,6 @@
     <string name="radio_stack_type_basic">Basic</string>
     <string name="radio_stack_type_full_ext_adv">Full Ext Adv</string>
     <string name="radio_stack_type_hci_ext_adv">Hci Ext Adv</string>
-    <string name="radio_stack_type_unknown">Unknown</string>
-    <string name="device_info_share">Share Device Info %1$s</string>
+    <string name="radio_stack_type_unknown">未知</string>
+    <string name="device_info_share">分享 %1$s 的信息</string>
 </resources>
