@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="nfceditor_sector_title">Sector: %1$d</string>
-    <string name="nfceditor_title">Edit Dump</string>
-    <string name="nfceditor_btn_save">Save</string>
+    <string name="nfceditor_title">编辑数据</string>
+    <string name="nfceditor_btn_save">储存</string>
     <string name="nfc_card_sector">Sector</string>
     <string name="nfc_card_block">Block</string>
     <string name="nfc_card_uid">UID</string>
@@ -14,12 +14,12 @@
     <string name="nfc_card_key_b">Key B</string>
     <string name="nfc_card_title_4k">MIFARE Classic 4K</string>
     <string name="nfc_card_title_1k">MIFARE Classic 1K</string>
-    <string name="nfc_dialog_title">Save Changes?</string>
-    <string name="nfc_dialog_text">All unsaved changes will be lost</string>
-    <string name="nfc_dialog_btn_save">Save</string>
-    <string name="nfc_dialog_btn_not_save">Don’t Save</string>
-    <string name="nfc_dialog_btn_save_as">Save Dump As…</string>
+    <string name="nfc_dialog_title">存储更改?</string>
+    <string name="nfc_dialog_text">所有未保存的修改都将丢失</string>
+    <string name="nfc_dialog_btn_save">储存</string>
+    <string name="nfc_dialog_btn_not_save">放弃</string>
+    <string name="nfc_dialog_btn_save_as">储存到…</string>
     <string name="nfc_dialog_save_as_title">@string/nfc_dialog_btn_save_as</string>
     <string name="nfc_popup_save">@string/nfceditor_btn_save</string>
-    <string name="nfc_popup_save_as">Save Dump as…</string>
+    <string name="nfc_popup_save_as">储存到…</string>
 </resources>

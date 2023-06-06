@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="receive_save_btn">Save To Archive</string>
-    <string name="receive_title">Add Key</string>
-    <string name="receive_edit_btn">Edit</string>
-    <string name="receive_error_conflict">Error when saving. A key with this name already exists</string>
+    <string name="receive_save_btn">保存至储存库</string>
+    <string name="receive_title">添加Key</string>
+    <string name="receive_edit_btn">编辑</string>
+    <string name="receive_error_conflict">保存时出错, 已经有同名的Key文件</string>
 
-    <string name="receive_retry_btn">Retry</string>
-    <string name="receive_no_internet_title">Not Internet Connection</string>
+    <string name="receive_retry_btn">重试</string>
+    <string name="receive_no_internet_title">没有互联网连接</string>
     <string name="receive_no_internet_desc">Unable to download this key</string>
     <string name="receive_error_server_title">Can\'t Connect to the Server</string>
     <string name="receive_error_server_desc">Unable to download this key</string>

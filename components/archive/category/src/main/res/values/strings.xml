@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="category_deleted_title">已删除</string>
-    <string name="category_empty">你没有已删除的内容在这里</string>
+    <string name="category_empty">没有内容在这里</string>
     <string name="category_item_delete_all">删除全部</string>
     <string name="category_item_restore_all">恢复全部</string>
     <string name="dialog_cancel">取消</string>
@@ -11,7 +11,7 @@
     <string name="dialog_delete_all_confirm">删除全部</string>
 
     <string name="dialog_restore_all_title">恢复吗?</string>
-    <string name="dialog_restore_all_desc">所以删除的内容将恢复到储存库并同步至Flipper</string>
+    <string name="dialog_restore_all_desc">所有删除的内容将恢复到储存库并同步至Flipper</string>
     <string name="dialog_restore_all_confirm">恢复全部</string>
 
 </resources>

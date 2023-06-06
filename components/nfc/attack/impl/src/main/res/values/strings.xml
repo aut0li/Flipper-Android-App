@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="nfcattack_title">NFC Tools</string>
+    <string name="nfcattack_title">NFC 工具</string>
     <string name="nfcattack_mifare_classic_title">MIFARE Classic</string>
-    <string name="nfcattack_mifare_classic_mfkey32_title">Mfkey32 (Detect Reader)</string>
-    <string name="nfcattack_mifare_classic_mfkey32_desc">Calculate keys from Detect Reader</string>
+    <string name="nfcattack_mifare_classic_mfkey32_title">Mfkey32 (读卡器识别)</string>
+    <string name="nfcattack_mifare_classic_mfkey32_desc">从读卡器中计算NFC卡片的秘钥</string>
 </resources>

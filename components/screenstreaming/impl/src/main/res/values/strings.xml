@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="control_title">Remote Control</string>
-    <string name="control_options_screenshot">Screenshot</string>
-    <string name="control_options_lock">Lock Flipper</string>
-    <string name="control_options_unlock">Unlock Flipper</string>
-    <string name="control_options_dialog_title">Outdated Firmware Version</string>
-    <string name="control_options_dialog_desc">Update Flipper firmware to use this feature</string>
-    <string name="control_options_dialog_btn">Got It</string>
-    <string name="control_up">Up</string>
-    <string name="control_down">Down</string>
-    <string name="control_left">Left</string>
-    <string name="control_right">Right</string>
+    <string name="control_title">远程控制</string>
+    <string name="control_options_screenshot">屏幕截图</string>
+    <string name="control_options_lock">锁定Flipper</string>
+    <string name="control_options_unlock">解锁Flipper</string>
+    <string name="control_options_dialog_title">过时的固件版本</string>
+    <string name="control_options_dialog_desc">升级Flipper固件才能使用这个功能</string>
+    <string name="control_options_dialog_btn">升级</string>
+    <string name="control_up">上</string>
+    <string name="control_down">下</string>
+    <string name="control_left">左</string>
+    <string name="control_right">右</string>
     <string name="control_ok">OK</string>
-    <string name="control_back">Back</string>
-    <string name="control_unlock">Back</string>
-    <string name="screenshot_export_title">Share screenshot of flipper…</string>
-    <string name="flipper_display">Flipper display</string>
+    <string name="control_back">返回</string>
+    <string name="control_unlock">返回</string>
+    <string name="screenshot_export_title">分享此截图…</string>
+    <string name="flipper_display">Flipper显示的内容</string>
 </resources>

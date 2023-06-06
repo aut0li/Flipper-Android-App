@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="keys_category_favorites">Favorites</string>
-    <string name="keys_category_others">Others</string>
-    <string name="keys_not_found">No key was found. Start a sync in the mobile app first and wait for it to finish</string>
+    <string name="keys_category_favorites">收藏</string>
+    <string name="keys_category_others">其他</string>
+    <string name="keys_not_found">没有找到key文件, 请先在app中点击同步并确认同步完成后重试</string>
 </resources>

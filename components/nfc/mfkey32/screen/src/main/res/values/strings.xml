@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="mfkey32_title">Mfkey32 (Detect Reader)</string>
+    <string name="mfkey32_title">Mfkey32 (读卡器识别)</string>
     <string name="mfkey32_error_title">The file for bruteforce was not found. Perform reader attack on the flipper first</string>
     <string name="mfkey32_downloading_title">Calculation Started…</string>
-    <string name="mfkey32_downloading_desc">Downloading raw file from Flipper…</string>
+    <string name="mfkey32_downloading_desc">从您的Flipper上下载原文件…</string>
     <string name="mfkey32_calculation_title">@string/mfkey32_downloading_title</string>
     <string name="mfkey32_calculation_desc">Calculating…</string>
     <string name="mfkey32_uploading_title">Calculation Completed</string>

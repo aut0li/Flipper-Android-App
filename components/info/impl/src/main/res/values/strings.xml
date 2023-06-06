@@ -12,12 +12,12 @@
 
     <string name="info_firmware_update_title">固件升级</string>
     <string name="info_firmware_update_unsupported_title">过时的固件版本</string>
-    <string name="info_firmware_update_unsupported_desc">Firmware version on your Flipper is not supported. Please update it via PC.</string>
-    <string name="info_firmware_update_unsupported_link">[How to update Flipper](https://docs.flipperzero.one/basics/firmware-update)</string>
-    <string name="info_firmware_update_application_unsupported_title">Outdated Mobile App version</string>
-    <string name="info_firmware_update_application_unsupported_desc">Update App to the latest version to connect Flipper</string>
-    <string name="info_firmware_update_application_unsupported_link">[Go to Google Play](https://play.google.com/store/apps/details?id=com.flipperdevices.app)</string>
-    <string name="info_firmware_waiting">Waiting for Flipper to finish update.\nReconnecting</string>
+    <string name="info_firmware_update_unsupported_desc">您Flipper的固件版本不支持，请通过电脑更新</string>
+    <string name="info_firmware_update_unsupported_link">[如何升级Flipper](https://docs.flipperzero.one/basics/firmware-update)</string>
+    <string name="info_firmware_update_application_unsupported_title">过时的APP版本</string>
+    <string name="info_firmware_update_application_unsupported_desc">升级到最新APP版本以连接Flipper</string>
+    <string name="info_firmware_update_application_unsupported_link">[前往 Google Play](https://play.google.com/store/apps/details?id=com.flipperdevices.app)</string>
+    <string name="info_firmware_waiting">等待您的Flipper完成升级</string>
 
     <string name="info_device_options">选项</string>
 
@@ -62,8 +62,8 @@
     <string name="radio_stack_type_full">全部</string>
     <string name="radio_stack_type_light">Light</string>
     <string name="radio_stack_type_beacon">信道</string>
-    <string name="radio_stack_type_basic">Basic</string>
-    <string name="radio_stack_type_full_ext_adv">Full Ext Adv</string>
+    <string name="radio_stack_type_basic">普通</string>
+    <string name="radio_stack_type_full_ext_adv">完整高级服务</string>
     <string name="radio_stack_type_hci_ext_adv">Hci Ext Adv</string>
     <string name="radio_stack_type_unknown">未知</string>
     <string name="device_info_share">分享 %1$s 的信息</string>

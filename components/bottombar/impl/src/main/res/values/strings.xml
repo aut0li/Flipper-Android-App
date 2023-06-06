@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="bar_title_archive">Archive</string>
-    <string name="bar_title_hub">Hub</string>
+    <string name="bar_title_archive">储存库</string>
+    <string name="bar_title_hub">扩展</string>
 </resources>

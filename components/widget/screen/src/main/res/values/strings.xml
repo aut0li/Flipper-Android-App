@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="widget_options_title">Choose Key</string>
-    <string name="widget_options_favorite_title">Favorites</string>
-    <string name="widget_options_all_title">All</string>
-    <string name="widget_options_sync_progress">Syncing with Flipper…</string>
-    <string name="widget_options_content_empty">You have no keys yet</string>
-    <string name="widget_options_sync_percent">Syncing %1$s</string>
+    <string name="widget_options_title">选择Key</string>
+    <string name="widget_options_favorite_title">收藏</string>
+    <string name="widget_options_all_title">全部</string>
+    <string name="widget_options_sync_progress">与Flipper同步中…</string>
+    <string name="widget_options_content_empty">没有内容</string>
+    <string name="widget_options_sync_percent">同步中 %1$s</string>
 
 </resources>
